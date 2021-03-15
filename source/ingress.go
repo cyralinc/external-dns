@@ -95,7 +95,7 @@ func NewIngressSource(kubeClient kubernetes.Interface, namespace, annotationFilt
 		return ingressInformer.Informer().HasSynced(), nil
 	})
 	if err != nil {
-		return nil, fmt.Errorf("failed to sync cache: %v", err)
+		return nil, fmt.Errorf("ingress.go: failed to sync cache: %v", err)
 	}
 
 	sc := &ingressSource{

@@ -117,14 +117,14 @@ func NewIstioVirtualServiceSource(
 		return serviceInformer.Informer().HasSynced(), nil
 	})
 	if err != nil {
-		return nil, fmt.Errorf("failed to sync cache: %v", err)
+		return nil, fmt.Errorf("virtualservice.go: failed to sync cache: %v", err)
 	}
 
 	err = wait.Poll(time.Second, 60*time.Second, func() (bool, error) {
 		return virtualServiceInformer.Informer().HasSynced(), nil
 	})
 	if err != nil {
-		return nil, fmt.Errorf("failed to sync cache: %v", err)
+		return nil, fmt.Errorf("virtualservice.go: failed to sync cache: %v", err)
 	}
 
 	return &virtualServiceSource{

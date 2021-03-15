@@ -92,7 +92,7 @@ func NewAmbassadorHostSource(
 		return ambassadorHostInformer.Informer().HasSynced(), nil
 	})
 	if err != nil {
-		return nil, errors.Wrapf(err, "failed to sync cache")
+		return nil, errors.Wrapf(err, "ambassador_host: failed to sync cache")
 	}
 
 	uc, err := newUnstructuredConverter()
