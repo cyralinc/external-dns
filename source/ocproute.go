@@ -95,7 +95,7 @@ func NewOcpRouteSource(
 		return routeInformer.Informer().HasSynced(), nil
 	})
 	if err != nil {
-		return nil, fmt.Errorf("failed to sync cache: %v", err)
+		return nil, fmt.Errorf("ocproute.go: failed to sync cache: %v", err)
 	}
 
 	return &ocpRouteSource{
