@@ -97,7 +97,7 @@ func NewContourHTTPProxySource(
 		return httpProxyInformer.Informer().HasSynced(), nil
 	})
 	if err != nil {
-		return nil, errors.Wrap(err, "failed to sync cache")
+		return nil, errors.Wrap(err, "httpproxy.go: failed to sync cache")
 	}
 
 	uc, err := NewUnstructuredConverter()

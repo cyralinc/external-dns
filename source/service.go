@@ -127,7 +127,7 @@ func NewServiceSource(kubeClient kubernetes.Interface, namespace, annotationFilt
 			nodeInformer.Informer().HasSynced(), nil
 	})
 	if err != nil {
-		return nil, fmt.Errorf("failed to sync cache: %v", err)
+		return nil, fmt.Errorf("service.go: failed to sync cache: %v", err)
 	}
 
 	// Transform the slice into a map so it will

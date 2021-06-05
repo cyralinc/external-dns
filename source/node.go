@@ -82,7 +82,7 @@ func NewNodeSource(kubeClient kubernetes.Interface, annotationFilter, fqdnTempla
 		return nodeInformer.Informer().HasSynced(), nil
 	})
 	if err != nil {
-		return nil, fmt.Errorf("failed to sync cache: %v", err)
+		return nil, fmt.Errorf("node.go: failed to sync cache: %v", err)
 	}
 
 	return &nodeSource{

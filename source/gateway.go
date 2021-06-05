@@ -113,7 +113,7 @@ func NewIstioGatewaySource(
 		return serviceInformer.Informer().HasSynced(), nil
 	})
 	if err != nil {
-		return nil, fmt.Errorf("failed to sync cache: %v", err)
+		return nil, fmt.Errorf("gateway.go: failed to sync cache: %v", err)
 	}
 
 	// wait for the local cache to be populated.
@@ -121,7 +121,7 @@ func NewIstioGatewaySource(
 		return gatewayInformer.Informer().HasSynced(), nil
 	})
 	if err != nil {
-		return nil, fmt.Errorf("failed to sync cache: %v", err)
+		return nil, fmt.Errorf("gateway.go: failed to sync cache: %v", err)
 	}
 
 	return &gatewaySource{

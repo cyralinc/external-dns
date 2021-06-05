@@ -106,7 +106,7 @@ func NewContourIngressRouteSource(
 		return ingressRouteInformer.Informer().HasSynced(), nil
 	})
 	if err != nil {
-		return nil, fmt.Errorf("failed to sync cache: %v", err)
+		return nil, fmt.Errorf("ingressroute.go: failed to sync cache: %v", err)
 	}
 
 	uc, err := NewUnstructuredConverter()
